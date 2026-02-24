@@ -1,0 +1,239 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #121212;
+  --text-light: #000;
+  --text-dark: #f5f5f5;
+  --primary: #4f46e5;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 25px;
+  border-radius: 14px;
+
+  backdrop-filter: blur(14px);
+  background: rgba(20, 20, 25, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.35), transparent 70%);
+
+  filter: blur(80px);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -250px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.35),
+    transparent 70%
+  );
+
+  filter: blur(90px);
+  z-index: -1;
+}
+
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.projects {
+  text-align: center;
+  margin: 120px 0;
+  position: relative;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  width: 80%;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.project-card {
+  position: relative;
+  padding: 28px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+/* main projects bigger */
+.main-projects {
+  grid-template-columns: repeat(2, 1fr);
+  width: 70%;
+  margin-bottom: 40px;
+}
+
+/* mini projects slightly smaller */
+.mini-projects {
+  grid-template-columns: repeat(2, 1fr);
+  width: 60%;
+}
+
+.main-projects .project-card {
+  min-height: 180px;
+}
+
+.mini-projects .project-card {
+  opacity: 0.9;
+  transform: scale(0.97);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #4f46e5, #14b8a6, #4f46e5);
+  opacity: 0;
+  transition: 0.35s;
+  z-index: -1;
+}
+
+.project-card:hover::before {
+  opacity: 0.6;
+}
+
+/* mouse spotlight glow */
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.25), transparent 60%);
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(79, 70, 229, 0.25);
+}
+
+.project-card h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+h1 {
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
+
+nav a,
+#toggle-mode {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav a {
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #14b8a6);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: gray;
+}
