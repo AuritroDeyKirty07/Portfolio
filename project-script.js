@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
+      card.style.transition = "transform 0.1s ease";
 
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -22,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     card.addEventListener("mouseleave", () => {
+      card.style.transition = "transform 0.4s ease";
       card.style.transform = "rotateX(0) rotateY(0) scale(1)";
-    });
+});
   });
 
 
