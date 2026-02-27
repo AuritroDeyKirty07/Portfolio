@@ -124,11 +124,17 @@ body.light-mode {
 }
 
 .mini-projects {
-  grid-template-columns: repeat(2, 320px);
-  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 35px;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
+}
+
+.mini-projects .project-card:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 400px;
 }
 
 .main-projects .project-card {
