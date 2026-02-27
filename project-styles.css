@@ -86,7 +86,7 @@ body.light-mode {
 
 .projects {
   text-align: center;
-  margin: 120px 0;
+  margin: 80px 0;
   position: relative;
 }
 
@@ -126,6 +126,9 @@ body.light-mode {
 .mini-projects {
   grid-template-columns: repeat(2, 1fr);
   width: 60%;
+  gap: 35px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .main-projects .project-card {
@@ -174,6 +177,7 @@ body.light-mode {
 .project-card:hover {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 25px 60px rgba(79, 70, 229, 0.25);
+  0 0 40px rgba(20, 184, 166, 0.15);
 }
 
 .project-card h4 {
