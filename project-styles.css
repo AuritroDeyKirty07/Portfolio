@@ -33,24 +33,24 @@ header {
   font-size: 1.1rem;
 }
 
-nav {
-  display: flex;
-  gap: 25px;
-  align-items: center;
+nav a{
+  position:relative;
+  transition:0.3s;
 }
 
-nav a {
-  opacity: 0.8;
-  transition: 0.3s;
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg,#4f46e5,#14b8a6);
+  transition:0.3s;
 }
 
-nav a:hover {
-  opacity: 1;
-}
-
-nav a.active {
-  color: #4f46e5;
-  font-weight: 600;
+nav a:hover::after{
+  width:100%;
 }
 
 #toggle-mode {
