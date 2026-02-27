@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleBtn = document.getElementById("toggle-mode");
 
-  // Load saved theme
   if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light-mode");
   }
@@ -50,16 +49,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ================= INTRO ANIMATION ================= */
+  /* ================= 3D CARD TILT ================= */
 
-  const intro = document.getElementById("intro-title");
+  const cards = document.querySelectorAll(".project-card");
 
-  if (intro) {
-    setTimeout(() => {
-      intro.style.transition = "all 1.2s ease";
-      intro.style.opacity = "1";
-      intro.style.transform = "translateY(0)";
-    }, 600);
-  }
+  cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+
+      const rect = card.getBoundingClientRect();
+      card.style.transition = "transform 0.1s ease";
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 18;
+      const rotateY = (centerX - x) / 18;
+
+      card.style.transform =
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transition = "transform 0.4s ease";
+      card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    });
+  });
+
+  /* ================= REVEAL ON SCROLL ================= */
+
+  const reveals = document.querySelectorAll(".reveal");
+
+  const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < trigger) {
+        el.classList.add("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 
 });
