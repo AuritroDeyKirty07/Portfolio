@@ -1,65 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* ================= PAGE TRANSITION ================= */
-
   const page = document.querySelector(".page-transition");
+  if (!page) return; // safety check
 
-  if (page) {
-    setTimeout(() => {
-      page.classList.add("show");
-    }, 50);
+  // Fade in
+  setTimeout(() => {
+    page.classList.add("show");
+  }, 50);
 
-    const links = document.querySelectorAll("a[href]");
+  // Fade out on internal link click
+  const links = document.querySelectorAll("a[href]");
 
-    links.forEach(link => {
-      const href = link.getAttribute("href");
-      const isExternal = link.target === "_blank";
-      const isAnchor = href.startsWith("#");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    const isExternal = link.target === "_blank";
+    const isAnchor = href.startsWith("#");
 
-      if (!isExternal && !isAnchor) {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          page.classList.add("fade-out");
+    if (!isExternal && !isAnchor) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        page.classList.add("fade-out");
 
-          setTimeout(() => {
-            window.location.href = link.href;
-          }, 500);
-        });
-      }
-    });
-  }
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    }
+  });
+});
 
-  /* ================= THEME PERSISTENCE ================= */
+const toggleBtn = document.getElementById("toggle-mode");
 
-  const toggleBtn = document.getElementById("toggle-mode");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-mode");
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-
-      const theme = document.body.classList.contains("light-mode")
-        ? "light"
-        : "dark";
-
-      localStorage.setItem("theme", theme);
-    });
-  }
-
-  /* ================= INTRO ANIMATION ================= */
-
+// Intro animation within first 7 seconds
+window.addEventListener("load", () => {
   const intro = document.getElementById("intro-title");
 
-  if (intro) {
-    setTimeout(() => {
-      intro.style.transition = "all 1.2s ease";
-      intro.style.opacity = "1";
-      intro.style.transform = "translateY(0)";
-    }, 600);
-  }
-
+  setTimeout(() => {
+    intro.style.transition = "all 1.2s ease";
+    intro.style.opacity = "1";
+    intro.style.transform = "translateY(0)";
+  }, 600); // starts quickly after load
 });
