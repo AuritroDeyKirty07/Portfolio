@@ -8,6 +8,21 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.tech-stack {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.15);
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
 .projects {
   text-align: center;
   margin: 90px 0;
