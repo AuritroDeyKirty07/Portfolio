@@ -6,23 +6,6 @@
   --primary:#4f46e5;
 }
 
-.btn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: linear-gradient(90deg,#4f46e5,#14b8a6);
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.btn-outline {
-  padding: 10px 18px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
-  text-decoration: none;
-  display: inline-block;
-}
 
 body{
   margin:0;
@@ -242,3 +225,4 @@ body::after{
   transform: translateY(-20px);
 
 }
+
