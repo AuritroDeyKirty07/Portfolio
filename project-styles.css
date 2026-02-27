@@ -8,6 +8,18 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.section-intro {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+nav a.active {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
 .tech-stack {
   margin-top: 15px;
   display: flex;
