@@ -1,4 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const page = document.querySelector(".page-transition");
+  if (!page) return; // safety check
+
+  // Fade in
+  setTimeout(() => {
+    page.classList.add("show");
+  }, 50);
+
+  // Fade out on internal link click
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    const isExternal = link.target === "_blank";
+    const isAnchor = href.startsWith("#");
+
+    if (!isExternal && !isAnchor) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        page.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
 
   const cards = document.querySelectorAll(".project-card");
 
