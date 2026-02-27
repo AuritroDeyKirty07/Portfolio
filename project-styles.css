@@ -1,4 +1,6 @@
-/* ================= ROOT SYSTEM ================= */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --bg-light:#ffffff;
