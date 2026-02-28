@@ -1,46 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const page = document.querySelector(".page-transition");
-  if (!page) return; // safety check
+  if (page) {
+    setTimeout(() => page.classList.add("show"), 50);
 
-  // Fade in
-  setTimeout(() => {
-    page.classList.add("show");
-  }, 50);
+    document.querySelectorAll("a[href]").forEach(link => {
+      const href = link.getAttribute("href");
+      const isExternal = link.target === "_blank";
+      const isAnchor   = href.startsWith("#");
+      const isMailto   = href.startsWith("mailto:");
 
-  // Fade out on internal link click
-  const links = document.querySelectorAll("a[href]");
+      if (!isExternal && !isAnchor && !isMailto) {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          page.classList.add("fade-out");
+          setTimeout(() => { window.location.href = link.href; }, 450);
+        });
+      }
+    });
+  }
 
-  links.forEach(link => {
-    const href = link.getAttribute("href");
-    const isExternal = link.target === "_blank";
-    const isAnchor = href.startsWith("#");
+  const toggleBtn = document.getElementById("toggle-mode");
+  if (toggleBtn) {
 
-    if (!isExternal && !isAnchor) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        page.classList.add("fade-out");
-
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-mode");
+      toggleBtn.textContent = "☀️";
     }
-  });
-});
 
-const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-mode");
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
 
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-});
 
-// Intro animation within first 7 seconds
-window.addEventListener("load", () => {
   const intro = document.getElementById("intro-title");
+  if (intro) {
+    setTimeout(() => {
+      intro.style.transition = "opacity 1.1s ease, transform 1.1s ease";
+      intro.style.opacity = "1";
+      intro.style.transform = "translateX(0)";
+    }, 400);
+  }
 
-  setTimeout(() => {
-    intro.style.transition = "all 1.2s ease";
-    intro.style.opacity = "1";
-    intro.style.transform = "translateY(0)";
-  }, 600); // starts quickly after load
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
 });

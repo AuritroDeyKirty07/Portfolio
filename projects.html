@@ -1,99 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projects - Auritro Dey Kirty</title>
-<meta name="description" content="Frontend projects built with JavaScript, APIs and interactive UI systems.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="project-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Auritro Dey Kirty</title>
+  <meta name="description" content="Frontend projects built with JavaScript, APIs and interactive UI systems by Auritro Dey Kirty.">
+  <meta property="og:title" content="Projects — Auritro Dey Kirty">
+  <meta property="og:description" content="Pokemon KO Battle, Weather Dashboard, Mini JS Games and more.">
+  <meta property="og:image" content="https://auritrodeykirty07.github.io/Portfolio/images/og-preview.png">
+  <link rel="icon" href="./images/favi.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-styles.css">
+  <link rel="stylesheet" href="upgrades.css">
 </head>
 
 <body>
-
 <div class="page-transition">
+
 <header>
   <a href="index.html" class="logo">Auritro Dey Kirty</a>
   <nav>
-    <a href="https://auritrodeykirty07.github.io/Portfolio/index.html#achievements">Solved So Far</a>
-    <a href="https://auritrodeykirty07.github.io/Portfolio/index.html#contact">Contact Me</a>
+    <a href="index.html#achievements">Problem Solving</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
     <button id="toggle-mode">🌙</button>
   </nav>
 </header>
 
 <main>
-
 <section id="projects" class="projects">
   <h1>Projects</h1>
-
   <p class="section-intro">
     A collection of interactive frontend applications focused on clean logic,
-    scalable UI behavior and real-time state updates.
+    scalable UI behaviour and real-time state updates.
   </p>
 
   <h2>Major Projects</h2>
-
   <div class="project-grid main-projects">
 
-    <a href="https://auritrodeykirty07.github.io/pokemon-ko-battle/" class="project-card reveal" target="_blank">
-      <h4>⚔️ Pokemon KO Battle</h4>
-      <p>
-        Built a turn-based battle engine implementing HP calculations,
-        state validation, and real-time DOM synchronization to ensure
-        consistent game behavior.
-      </p>
-      <div class="tech-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+    <div class="project-card reveal featured-project-card">
+      <div class="card-header">
+        <h4>⚔️ Pokémon KO Battle Simulator</h4>
       </div>
-    </a>
+      <p>Turn-based battle engine with live PokéAPI data, animated HP bars, and full game state logic.</p>
 
-    <a href="https://auritrodeykirty07.github.io/weather-dashboard/" class="project-card reveal" target="_blank">
-      <h4>🌦️ Weather App</h4>
-      <p>
-        Real-time weather dashboard using API fetch, async/await logic,
-        dynamic UI updates and responsive layout structure.
-      </p>
+      <div class="demo-skeleton" id="pokemon-skeleton">
+        <div class="skeleton-bar"></div>
+        <div class="skeleton-bar short"></div>
+        <div class="skeleton-bar"></div>
+      </div>
+
+      <div class="case-study-mini">
+        <div class="cs-row">
+          <span class="cs-dot problem-dot"></span>
+          <span><strong>Problem:</strong> Build a real battle system driven by live data, not hardcoded values.</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot approach-dot"></span>
+          <span><strong>Approach:</strong> PokéAPI for live stats + vanilla JS turn engine with damage calc and type effectiveness.</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot result-dot"></span>
+          <span><strong>Result:</strong> Fully playable simulator. Mastered async/await, error handling, stateful DOM.</span>
+        </div>
+      </div>
+
       <div class="tech-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+        <span>JavaScript</span><span>PokéAPI</span><span>Fetch API</span><span>CSS Animations</span>
+      </div>
+      <div class="card-links">
+        <a href="https://auritrodeykirty07.github.io/pokemon-ko-battle/" class="card-btn-primary" target="_blank" rel="noopener" data-skeleton="pokemon-skeleton">🎮 Play Demo</a>
+        <a href="https://github.com/AuritroDeyKirty07/pokemon-ko-battle" class="card-btn-ghost" target="_blank" rel="noopener">Source</a>
+      </div>
+    </div>
+
+    <a href="https://auritrodeykirty07.github.io/weather-dashboard/" class="project-card reveal" target="_blank" rel="noopener">
+      <div class="card-header">
+        <h4>🌦️ Weather Dashboard</h4>
+      </div>
+      <p>Real-time weather data with async fetch, dynamic UI updates, and responsive layout.</p>
+
+      <div class="case-study-mini">
+        <div class="cs-row">
+          <span class="cs-dot problem-dot"></span>
+          <span><strong>Problem:</strong> Display live weather cleanly without page reloads.</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot approach-dot"></span>
+          <span><strong>Approach:</strong> Fetch API with async/await, error states for invalid cities, dynamic DOM rendering.</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot result-dot"></span>
+          <span><strong>Result:</strong> Responsive weather app with loading states and graceful error handling.</span>
+        </div>
+      </div>
+
+      <div class="tech-stack">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Weather API</span>
       </div>
     </a>
 
   </div>
 
-  <h3 class="section-schedule">Mini Projects</h3>
+  <h2 class="section-schedule">Mini JS Lab</h2>
+  <p class="section-intro" style="margin-bottom:32px;">
+    A collection of focused JavaScript experiments — each one built to practise a specific concept.
+  </p>
 
   <div class="project-grid mini-projects">
 
-    <a href="https://auritrodeykirty07.github.io/mini-js-games/rock-paper-scissors/" class="project-card reveal">
+    <a href="https://auritrodeykirty07.github.io/mini-js-games/rock-paper-scissors/" class="project-card reveal" target="_blank" rel="noopener">
       <h4>✊ Rock Paper Scissors</h4>
-      <p>Score tracking logic with dynamic UI feedback.</p>
+      <p>Score tracking with real-time feedback. <br><em style="opacity:0.6; font-size:0.8rem;">Concept: Event handling, conditional logic, state tracking.</em></p>
+      <div class="tech-stack"><span>JS</span><span>DOM</span></div>
     </a>
 
-    <a href="https://auritrodeykirty07.github.io/mini-js-games/digital-clock/" class="project-card reveal">
+    <a href="https://auritrodeykirty07.github.io/mini-js-games/digital-clock/" class="project-card reveal" target="_blank" rel="noopener">
       <h4>⏱️ Digital Clock</h4>
-      <p>Live time rendering using JavaScript timing functions.</p>
+      <p>Live time rendering with format toggling. <br><em style="opacity:0.6; font-size:0.8rem;">Concept: setInterval, Date API, real-time DOM updates.</em></p>
+      <div class="tech-stack"><span>JS</span><span>Date API</span></div>
     </a>
 
-    <a href="https://auritrodeykirty07.github.io/mini-js-games/bucket-list-project/" class="project-card reveal">
+    <a href="https://auritrodeykirty07.github.io/mini-js-games/bucket-list-project/" class="project-card reveal" target="_blank" rel="noopener">
       <h4>📝 Bucket List App</h4>
-      <p>Dynamic task management with real-time DOM updates.</p>
+      <p>Dynamic task management with add/remove. <br><em style="opacity:0.6; font-size:0.8rem;">Concept: CRUD operations, localStorage, dynamic rendering.</em></p>
+      <div class="tech-stack"><span>JS</span><span>localStorage</span></div>
     </a>
 
   </div>
 
-</section>
+  <div class="whats-next reveal">
+    <h3>What's Next 🚧</h3>
+    <p>Currently working on projects using React and state management patterns. More coming soon.</p>
+    <a href="https://github.com/AuritroDeyKirty07" class="btn-outline" target="_blank" rel="noopener">Follow on GitHub →</a>
+  </div>
 
+</section>
 </main>
 
 <footer>&copy; 2026 Auritro Dey Kirty. All rights reserved.</footer>
 </div>
-
 <script src="project-script.js"></script>
+<script src="upgrades.js"></script>
 </body>
 </html>

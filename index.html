@@ -3,27 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Auritro Dey Kirty | Frontend Developer</title>
-  <meta name="description" content="Frontend Developer portfolio of Auritro Dey Kirty showcasing interactive JavaScript projects and UI systems.">
-  <meta property="og:title" content="Auritro Dey Kirty | Frontend Developer">
-  <meta property="og:description" content="Interactive web projects, JavaScript applications and frontend experiments.">
-  <meta name="theme-color" content="#121212">
-  <link rel="icon" href="./images/favicon.ico">
 
+  <meta name="description" content="Auritro Dey Kirty — Frontend Developer building interactive, API-driven web applications with JavaScript and React. Seeking frontend internship opportunities.">
+  <meta name="keywords" content="Auritro Dey Kirty, frontend developer, JavaScript, React, portfolio, internship">
+  <meta name="author" content="Auritro Dey Kirty">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#121212">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://auritrodeykirty07.github.io/Portfolio/">
+  <meta property="og:title" content="Auritro Dey Kirty | Frontend Developer">
+  <meta property="og:description" content="Frontend Developer building interactive, API-driven web apps. Pokemon Battle Simulator, Weather Dashboard and more.">
+  <meta property="og:image" content="https://auritrodeykirty07.github.io/Portfolio/images/og-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Auritro Dey Kirty | Frontend Developer">
+  <meta name="twitter:description" content="Frontend Developer building interactive web apps with JS and React.">
+  <meta name="twitter:image" content="https://auritrodeykirty07.github.io/Portfolio/images/og-preview.png">
+
+  <link rel="icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="upgrades.css"/>
 </head>
 
 <body>
-
 <div class="page-transition">
 
 <header>
   <div class="logo">Auritro Dey Kirty</div>
   <nav>
-    <a href="#achievements">Solved So Far</a>
+    <a href="#featured">Featured</a>
     <a href="projects.html">Projects</a>
-    <a href="#contact">Contact Me</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contact">Contact</a>
     <button id="toggle-mode">🌙</button>
   </nav>
 </header>
@@ -34,33 +47,94 @@
     <div class="profile-image">
       <img src="images/zoomed-in.jpg" alt="Auritro Dey Kirty" loading="lazy"/>
     </div>
-
     <div id="text">
-      <h2 id="intro-title">Hi, I’m Auritro — Frontend Developer</h2>
+      <p class="hero-eyebrow">Available for Internship · India</p>
+      <h2 id="intro-title">Hi, I'm Auritro —<br>Frontend Developer</h2>
       <p>
         I build interactive, performance-focused web applications using modern
         JavaScript and clean UI architecture. I enjoy designing systems where
         logic and interface work seamlessly together.
       </p>
-
-      <div style="margin-top:20px;">
-        <a href="projects.html" class="btn">View Projects</a>
+      <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px;">
+        <a href="#featured" class="btn">⭐ Featured Project</a>
+        <a href="projects.html" class="btn-outline">All Projects</a>
         <a href="resume.pdf" download class="btn-outline">Download Resume</a>
       </div>
     </div>
   </section>
 
-  <section class="stack">
+  <section id="featured" class="featured-section reveal">
+    <div class="featured-label">⭐ Featured Project</div>
+    <div class="featured-card">
+      <div class="featured-badge">Best Work</div>
+      <div class="featured-body">
+        <div class="featured-text">
+          <h2>Pokémon KO Battle Simulator</h2>
+          <p class="featured-tagline">Turn-based battle engine powered by live PokéAPI data</p>
+          <div class="case-study">
+            <div class="case-block problem">
+              <h4>🔴 Problem</h4>
+              <p>Most Pokémon fan sites display static data. I wanted to build something genuinely interactive — a battle system where moves, HP, and outcomes are driven by real game data, not hardcoded values.</p>
+            </div>
+            <div class="case-block approach">
+              <h4>🔵 Approach</h4>
+              <p>Fetched live Pokémon stats and move data from the PokéAPI using async/await. Built a turn-based engine in vanilla JS handling damage calculation, type effectiveness, and KO logic. Designed animated HP bars that react to live state changes.</p>
+            </div>
+            <div class="case-block result">
+              <h4>🟢 Result</h4>
+              <p>A fully playable simulator with dynamic Pokémon selection, live HP tracking, and move-based damage. Sharpened async/await, API error handling, and stateful DOM management — all without a framework.</p>
+            </div>
+          </div>
+          <div class="featured-tech">
+            <span>Vanilla JS</span><span>PokéAPI</span><span>Fetch / async-await</span><span>CSS Animations</span>
+          </div>
+          <div class="featured-links">
+            <a href="https://auritrodeykirty07.github.io/pokemon-ko-battle/" class="btn" target="_blank" rel="noopener">🎮 Play Live Demo</a>
+            <a href="https://github.com/AuritroDeyKirty07/pokemon-ko-battle" class="btn-outline" target="_blank" rel="noopener">View Source</a>
+          </div>
+        </div>
+        <div class="featured-preview">
+            <img src="./images/pokemon-preview.PNG" alt="Pokemon KO Battle Screenshot">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack reveal">
     <h3>Tech Stack</h3>
-    <div class="skills">
-      <img src="images/icons8-html-5-48.png" alt="HTML">
-      <img src="images/icons8-css-48.png" alt="CSS">
-      <img src="images/icons8-javascript-48.png" alt="Javascript">
-      <img src="images/icons8-react-48.png" alt="React">
-      <img src="images/icons8-python-48.png" alt="Python">
-      <img src="images/icons8-sql-48.png" alt="SQL">
-      <img src="images/icons8-c++-48.png" alt="CPP">
-      <img src="images/icons8-java-48.png" alt="Java">
+    <div class="skills-tier">
+      <p class="tier-label">Proficient</p>
+      <div class="skills skills-strong">
+        <div class="skill-item">
+          <img src="images/icons8-html-5-48.png" alt="HTML5"><span>HTML5</span>
+        </div>
+        <div class="skill-item">
+          <img src="images/icons8-css-48.png" alt="CSS3"><span>CSS3</span>
+        </div>
+        <div class="skill-item">
+          <img src="images/icons8-javascript-48.png" alt="JavaScript"><span>JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <img src="images/icons8-sql-48.png" alt="SQL"><span>SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="skills-tier" style="margin-top:24px;">
+      <p class="tier-label tier-familiar">Familiar With</p>
+      <div class="skills skills-familiar">
+        <div class="skill-item faded">
+          <img src="images/icons8-react-48.png" alt="React"><span>React</span>
+        </div>
+        <div class="skill-item faded">
+          <img src="images/icons8-python-48.png" alt="Python"><span>Python</span>
+        </div>
+        <div class="skill-item faded">
+          <img src="images/icons8-c++-48.png" alt="C++"><span>C++</span>
+        </div>
+        <div class="skill-item faded">
+          <img src="images/icons8-java-48.png" alt="Java"><span>Java</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -68,46 +142,80 @@
     <h3>About Me</h3>
     <p style="max-width:700px; margin:0 auto; opacity:0.8;">
       I focus on building responsive interfaces with strong JavaScript logic,
-      clean structure, and scalable UI behavior. Currently improving my
+      clean structure, and scalable UI behaviour. Currently improving my
       understanding of state management patterns and API integrations.
       Actively seeking frontend internship opportunities where I can work on
       real production systems and grow as a developer.
     </p>
   </section>
 
-  <section id="achievements" class="ach">
-    <h3>Solved so far...</h3>
-    <div class="icon2">
-      <a href="https://www.hackerrank.com/profile/deykirtyauritro" target="_blank">
-        <img src="images/hackerrank.png" alt="Hackerrank">
+
+  <section id="achievements" class="ach reveal">
+    <h3>Problem Solving</h3>
+    <p style="opacity:0.7; margin-bottom:24px;">I regularly practise DSA to stay sharp for technical interviews.</p>
+    <div class="ps-cards">
+      <a href="https://www.hackerrank.com/profile/deykirtyauritro" target="_blank" rel="noopener" class="ps-card">
+        <img src="images/hackerrank.png" alt="HackerRank">
+        <div>
+          <strong>HackerRank</strong>
+          <span>View Profile →</span>
+        </div>
       </a>
-      <a href="https://leetcode.com/u/AuritroDeyKirty/" target="_blank">
-        <img src="images/free-leetcode-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-4-pack-logos-icons-2944960.webp" alt="leetcode">
+      <a href="https://leetcode.com/u/AuritroDeyKirty/" target="_blank" rel="noopener" class="ps-card">
+        <img src="images/free-leetcode-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-4-pack-logos-icons-2944960.webp" alt="LeetCode">
+        <div>
+          <strong>LeetCode — 39 problems solved</strong>
+          <span>View Profile →</span>
+        </div>
       </a>
     </div>
   </section>
 
 
-  <section id="contact" class="socials">
-    <h3>Connect with me</h3>
-    <div class="icons">
-      <a href="https://linkedin.com/in/auritro-dey-kirty" target="_blank">
-        <img src="images/icons8-linkedin-48.png" alt="LinkedIn"/>
-      </a>
-      <a href="https://github.com/AuritroDeyKirty07" target="_blank">
-        <img src="images/icons8-github-48.png" alt="GitHub"/>
-      </a>
-      <a href="mailto:deykirtyauritro@gmail.com">
-        <img src="images/icons8-mail-48.png" alt="Email">
-      </a>
+  <section id="contact" class="contact-section reveal">
+    <h3>Get In Touch</h3>
+    <p style="opacity:0.75; margin-bottom:32px;">Open to internship opportunities. Drop me a message!</p>
+    <div class="contact-grid">
+
+      <form class="contact-form" action="https://formspree.io/f/maqdkgka" method="POST">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn form-submit">Send Message ✉️</button>
+        <p class="form-note">Or email me directly: <a href="mailto:deykirtyauritro@gmail.com">deykirtyauritro@gmail.com</a></p>
+      </form>
+
+      <div class="contact-social">
+        <p class="social-heading">FIND ME ON</p>
+        <a href="https://linkedin.com/in/auritro-dey-kirty" target="_blank" rel="noopener" class="social-link">
+          <img src="images/icons8-linkedin-48.png" alt="LinkedIn">
+          <div><strong>LinkedIn</strong><span>auritro-dey-kirty</span></div>
+        </a>
+        <a href="https://github.com/AuritroDeyKirty07" target="_blank" rel="noopener" class="social-link">
+          <img src="images/icons8-github-48.png" alt="GitHub">
+          <div><strong>GitHub</strong><span>AuritroDeyKirty07</span></div>
+        </a>
+        <a href="mailto:deykirtyauritro@gmail.com" class="social-link">
+          <img src="images/icons8-mail-48.png" alt="Email">
+          <div><strong>Email</strong><span>deykirtyauritro@gmail.com</span></div>
+        </a>
+      </div>
+
     </div>
   </section>
 
 </main>
-
 <footer>&copy; 2026 Auritro Dey Kirty. All rights reserved.</footer>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

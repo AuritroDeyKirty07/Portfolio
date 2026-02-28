@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Auritro Dey Kirty</title>
+  <meta name="description" content="Thoughts on frontend development, JavaScript patterns, and what I'm learning as a developer.">
+  <meta property="og:title" content="Blog — Auritro Dey Kirty">
+  <meta property="og:description" content="Thoughts on frontend dev, JavaScript, and lessons from building real projects.">
+  <meta property="og:image" content="https://auritrodeykirty07.github.io/Portfolio/images/og-preview.png">
+  <link rel="icon" href="./images/favi-blog.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="upgrades.css">
+</head>
+
+<body>
+<div class="page-transition">
+
+<header>
+  <a href="index.html" class="logo">Auritro Dey Kirty</a>
+  <nav>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <button id="toggle-mode">🌙</button>
+  </nav>
+</header>
+
+<main class="blog-main">
+
+  <section class="blog-hero">
+    <h1>Blog</h1>
+    <p>Things I've learned, patterns I've discovered, and honest lessons from building real projects.</p>
+  </section>
+
+  <article class="blog-post reveal" id="post-pokemon-api">
+    <div class="post-meta">
+      <span class="post-tag">JavaScript</span>
+      <span class="post-tag">APIs</span>
+      <time datetime="2026-01-15">January 2026</time>
+    </div>
+
+    <h2>What Building a Pokémon Battle Simulator Taught Me About APIs</h2>
+
+    <p class="post-intro">
+      When I started the Pokémon KO Battle project I thought the hard part would be the battle logic.
+      I was wrong. The hard part was the API — specifically, learning to handle it gracefully when it was slow, failed, or returned data I didn't expect.
+    </p>
+
+    <h3>The Problem With My First Version</h3>
+    <p>
+      My first attempt fetched Pokémon data and immediately tried to use it. No loading state. No error handling. If the PokéAPI took 3 seconds (which it sometimes does on cold starts), the UI just sat there blank.
+      If the fetch failed, the whole app broke silently. Not great.
+    </p>
+
+    <h3>What I Actually Learned</h3>
+    <p>
+      The fix was adding three things I had skipped in my rush to get to the fun stuff:
+    </p>
+    <ol>
+      <li><strong>A loading skeleton</strong> — placeholder shapes that appear instantly while real data loads. Users know something is happening.</li>
+      <li><strong>try/catch around every fetch</strong> — so a failed request shows a friendly error, not a broken screen.</li>
+      <li><strong>Data validation</strong> — PokéAPI returns deeply nested objects. I now always check that a property exists before I use it, rather than assuming the shape is always correct.</li>
+    </ol>
+
+    <pre class="code-block"><code>// Before (fragile)
+const data = await fetch(url).then(r => r.json());
+updateUI(data.sprites.front_default);
+
+// After (resilient)
+try {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`API error: ${res.status}`);
+  const data = await res.json();
+  const sprite = data?.sprites?.front_default ?? '/images/fallback.png';
+  updateUI(sprite);
+} catch (err) {
+  showErrorState('Could not load Pokémon. Try again.');
+  console.error(err);
+}</code></pre>
+
+    <h3>The Bigger Lesson</h3>
+    <p>
+      Happy-path coding is easy. Real frontend engineering is about what happens when things go wrong.
+      Every API call is a promise that might not be kept — and your UI should handle that gracefully.
+    </p>
+    <p>
+      I now apply this thinking to every project: what does the user see while waiting? What do they see if something breaks?
+      Those two questions make the difference between a project that feels polished and one that just works in demos.
+    </p>
+
+    <div class="post-footer">
+      <a href="https://github.com/AuritroDeyKirty07/pokemon-ko-battle" class="btn-outline" target="_blank" rel="noopener">See the project on GitHub →</a>
+    </div>
+  </article>
+
+  <article class="blog-post reveal" id="post-css-animations">
+    <div class="post-meta">
+      <span class="post-tag">CSS</span>
+      <span class="post-tag">Animations</span>
+      <time datetime="2026-02-01">February 2026</time>
+    </div>
+
+    <h2>You Don't Need a Library for Most CSS Animations</h2>
+
+    <p class="post-intro">
+      Reach-for-a-library is a real trap in frontend development. I fell into it early — Animate.css,
+      GSAP, Framer Motion. All excellent tools. But I wasn't using them well because I didn't
+      understand what they were doing.
+    </p>
+
+    <h3>The Scroll Reveal Pattern</h3>
+    <p>
+      The most common animation on portfolio sites — elements fading in as you scroll — needs zero JavaScript libraries. Here's the entire thing:
+    </p>
+
+    <pre class="code-block"><code>/* CSS */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* JS — that's it */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('active');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));</code></pre>
+
+    <h3>When You Actually Need a Library</h3>
+    <p>
+      Scroll-driven parallax with multiple layers, physics-based spring animations, and complex SVG path morphing —
+      these are genuinely hard to build well in raw CSS. That's when GSAP or Framer Motion earn their bundle size.
+      But a card hover lift, a fade-in on scroll, a shimmer skeleton? Pure CSS. Every time.
+    </p>
+
+    <div class="post-footer">
+      <a href="projects.html" class="btn-outline">See these animations in my projects →</a>
+    </div>
+  </article>
+
+  <div class="blog-coming-soon reveal">
+    <p>More posts coming — I write about what I'm building and learning.</p>
+    <a href="https://github.com/AuritroDeyKirty07" class="btn-outline" target="_blank" rel="noopener">Follow me on GitHub →</a>
+  </div>
+
+</main>
+
+<footer>&copy; 2026 Auritro Dey Kirty. All rights reserved.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,82 +1,75 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
   const page = document.querySelector(".page-transition");
-  if (!page) return; // safety check
+  if (page) {
+    setTimeout(() => page.classList.add("show"), 50);
 
-  // Fade in
-  setTimeout(() => {
-    page.classList.add("show");
-  }, 50);
+    document.querySelectorAll("a[href]").forEach(link => {
+      const href = link.getAttribute("href");
+      const isExternal = link.target === "_blank";
+      const isAnchor   = href.startsWith("#");
+      const isMailto   = href.startsWith("mailto:");
 
-  // Fade out on internal link click
-  const links = document.querySelectorAll("a[href]");
+      if (!isExternal && !isAnchor && !isMailto) {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          page.classList.add("fade-out");
+          setTimeout(() => { window.location.href = link.href; }, 450);
+        });
+      }
+    });
+  }
 
-  links.forEach(link => {
-    const href = link.getAttribute("href");
-    const isExternal = link.target === "_blank";
-    const isAnchor = href.startsWith("#");
 
-    if (!isExternal && !isAnchor) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        page.classList.add("fade-out");
-
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
+  const toggleBtn = document.getElementById("toggle-mode");
+  if (toggleBtn) {
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-mode");
+      toggleBtn.textContent = "☀️";
     }
-  });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    toggleBtn.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-mode");
+      toggleBtn.textContent = isLight ? "☀️" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
 
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
       const rect = card.getBoundingClientRect();
-      card.style.transition = "transform 0.1s ease";
-
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
       card.style.setProperty("--x", x + "px");
       card.style.setProperty("--y", y + "px");
 
-      const centerX = rect.width / 2;
+      const centerX = rect.width  / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = (y - centerY) / 18;
-      const rotateY = (centerX - x) / 18;
+      const rotateX =  (y - centerY) / 20;
+      const rotateY = -(x - centerX) / 20;
 
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+      card.style.transition = "transform 0.08s ease";
+      card.style.transform  = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
     });
 
     card.addEventListener("mouseleave", () => {
-      card.style.transition = "transform 0.4s ease";
-      card.style.transform = "rotateX(0) rotateY(0) scale(1)";
-});
+      card.style.transition = "transform 0.45s ease";
+      card.style.transform  = "rotateX(0) rotateY(0) scale(1)";
+    });
   });
 
-
-  const reveals = document.querySelectorAll(".reveal");
-
-  const revealOnScroll = () => {
-    const trigger = window.innerHeight * 0.85;
-
-    reveals.forEach((el) => {
-      if (el.getBoundingClientRect().top < trigger) {
-        el.classList.add("active");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
       }
     });
-  };
+  }, { threshold: 0.12 });
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-const toggleBtn = document.getElementById("toggle-mode");
-
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
 });
