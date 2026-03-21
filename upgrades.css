@@ -125,6 +125,7 @@
 }
 
 .featured-tech {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -140,6 +141,7 @@
 }
 
 .featured-links {
+  justify-content: center;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -364,12 +366,6 @@ body.light-mode .form-group textarea:focus {
   opacity: 0.5;
   margin: 0;
   text-align: center;
-}
-
-.form-note a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .contact-social {
@@ -659,7 +655,6 @@ body.light-mode .code-block code { color: #1d4ed8; }
 
 .blog-coming-soon {
   text-align: center;
-  padding: 40px;
   opacity: 0.6;
 }
 
