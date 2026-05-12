@@ -271,7 +271,7 @@ body.light-mode .tier-label.tier-familiar {
   gap: 2px;
 }
 
-.ps-card strong {
+.ps-card strong, .leetcode-count {
   font-size: 0.9rem;
 }
 
