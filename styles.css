@@ -247,7 +247,7 @@ body::after{
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px;
+  gap: 33px;
   margin-top: 32px;
   flex-wrap: wrap;
 }
