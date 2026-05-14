@@ -273,6 +273,7 @@ body.light-mode .tier-label.tier-familiar {
 
 .ps-card strong, .leetcode-count {
   font-size: 0.9rem;
+  color: white;
 }
 
 .ps-card span {
