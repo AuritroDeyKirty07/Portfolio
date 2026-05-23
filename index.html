@@ -83,7 +83,7 @@
                 flex-wrap: wrap;
                 gap: 10px;
               ">
-              <a href="#featured" class="btn">⭐ Featured Project</a>
+              <a href="#featured" class="btn">Featured Project</a>
               <a href="projects.html" class="btn-outline">All Projects</a>
               <a
                 href="AURITRO DEY KIRTY_RESUME.pdf"
@@ -93,65 +93,67 @@
           </div>
         </section>
 
+        <div class="marquee-container" style="background: var(--primary); padding: 12px 0; border-top: var(--border-dark); border-bottom: var(--border-dark); transform: rotate(-2deg); margin: 60px 0; overflow: hidden; white-space: nowrap;">
+          <div class="marquee-content" style="display: inline-block; animation: scrollMarquee 20s linear infinite; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; color: #fff;">
+            OPEN FOR OPPORTUNITIES • READY TO SHIP • LET's BUILD SOMETHING GREAT • OPEN FOR OPPORTUNITIES • READY TO SHIP • LET's BUILD SOMETHING GREAT • OPEN FOR OPPORTUNITIES • READY TO SHIP • LET's BUILD SOMETHING GREAT • OPEN FOR OPPORTUNITIES • READY TO SHIP • LET's BUILD SOMETHING GREAT • 
+          </div>
+        </div>
+        <style>
+          @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          body.light-mode .marquee-container {
+            border-top: var(--border-light);
+            border-bottom: var(--border-light);
+          }
+        </style>
+
         <section id="featured" class="featured-section reveal">
-          <div class="featured-label">⭐ Featured Project</div>
+          <div class="featured-label">Featured Project</div>
           <div class="featured-card">
-            <div class="featured-badge">Best Work</div>
+            <div class="featured-badge">🔥 Still Cooking</div>
             <div class="featured-body">
               <div class="featured-text">
-                <h2>Pokémon KO Battle Simulator</h2>
-                <p class="featured-tagline">
-                  Turn-based battle engine powered by live PokéAPI data
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                  <img src="./images/codeforge-logo.png" alt="CodeForge Logo" style="height: 45px; width: 45px; border-radius: 50%; border: 3px solid #39ff14; box-shadow: 0 0 15px #39ff14; object-fit: contain;">
+                  <h2 style="margin: 0;">CodeForge</h2>
+                </div>
+                <p class="featured-tagline" style="margin-top: 5px;">
+                  A modern competitive programming platform simulating real coding workflows.
                 </p>
                 <div class="case-study">
                   <div class="case-block problem">
-                    <h4>🔴 Problem</h4>
+                    <h4>Problem</h4>
                     <p>
-                      Most Pokémon fan sites display static data. I wanted to
-                      build something genuinely interactive — a battle system
-                      where moves, HP, and outcomes are driven by real game
-                      data, not hardcoded values.
+                      Basic CRUD projects don't simulate the immersive experience of real coding environments like LeetCode or Codeforces. I needed a platform that handled problem solving, analytics, and leaderboards.
                     </p>
                   </div>
                   <div class="case-block approach">
-                    <h4>🔵 Approach</h4>
+                    <h4>Approach</h4>
                     <p>
-                      Fetched live Pokémon stats and move data from the PokéAPI
-                      using async/await. Built a turn-based engine in vanilla JS
-                      handling damage calculation, type effectiveness, and KO
-                      logic. Designed animated HP bars that react to live state
-                      changes.
+                      Built a robust MERN stack architecture featuring an interactive coding workspace, battle mode simulation, dynamic leaderboards, and JWT authentication. Utilized Recharts for a detailed analytics dashboard.
                     </p>
                   </div>
                   <div class="case-block result">
-                    <h4>🟢 Result</h4>
+                    <h4>Result</h4>
                     <p>
-                      A fully playable simulator with dynamic Pokémon selection,
-                      live HP tracking, and move-based damage. Sharpened
-                      async/await, API error handling, and stateful DOM
-                      management — all without a framework.
+                      A full-stack, production-ready platform that tracks coding streaks, performance, and hosts competitive battles within a responsive modern UI.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="featured-preview">
-                <img
-                  src="./images/pokemon-preview.PNG"
-                  alt="Pokemon KO Battle Screenshot" />
+              <div class="featured-preview" style="display: flex; flex-direction: column; gap: 20px;">
+                <img src="./images/cf-image1.png" alt="CodeForge Preview 1" style="width: 100%; border: var(--border-dark); box-shadow: 6px 6px 0px var(--v-blue);">
+                <img src="./images/cf-image2.png" alt="CodeForge Preview 2" style="width: 100%; border: var(--border-dark); box-shadow: 6px 6px 0px var(--v-pink);">
               </div>
             </div>
             <div class="featured-tech">
-              <span>Vanilla JS</span><span>PokéAPI</span><span>Fetch /
-                async-await</span><span>CSS Animations</span>
+              <span>MERN Stack</span><span>React</span><span>JWT</span><span>Recharts</span>
             </div>
             <div class="featured-links">
               <a
-                href="https://auritrodeykirty07.github.io/pokemon-ko-battle/"
-                class="btn"
-                target="_blank"
-                rel="noopener">🎮 Play Live Demo</a>
-              <a
-                href="https://github.com/AuritroDeyKirty07/pokemon-ko-battle"
+                href="https://github.com/AuritroDeyKirty07/CodeForge"
                 class="btn-outline"
                 target="_blank"
                 rel="noopener">View Source</a>
@@ -332,7 +334,7 @@
                 class="social-link">
                 <img src="images/icons8-linkedin-48.png" alt="LinkedIn" />
                 <div>
-                  <strong>LinkedIn</strong><span>auritro-dey-kirty</span>
+                  <strong>LinkedIn</strong><span>Auritro Dey Kirty</span>
                 </div>
               </a>
               <a
@@ -347,6 +349,16 @@
                 <img src="images/icons8-mail-48.png" alt="Email" />
                 <div>
                   <strong>Email</strong><span>deykirtyauritro@gmail.com</span>
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/heyyyauriii"
+                target="_blank"
+                rel="noopener"
+                class="social-link">
+                <img src="images/icons8-instagram-50.png" alt="Instagram" />
+                <div>
+                  <strong>Instagram</strong><span>@heyyyauriii</span>
                 </div>
               </a>
             </div>
@@ -399,7 +411,6 @@ leetCount.innerText = totalSolved;
 
 leetCount.style.fontSize = "1.0rem";
 leetCount.style.fontWeight = "600";
-leetCount.style.color = "#fff";
     } catch (error) {
         console.error(error);
 
