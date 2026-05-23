@@ -330,6 +330,7 @@ body.light-mode {
   justify-content: center;
   align-items: flex-start;
   gap: 33px;
+  gap: 33px;
   margin-top: 32px;
   flex-wrap: wrap;
 }
