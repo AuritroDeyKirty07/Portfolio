@@ -1,17 +1,17 @@
-# 🌐 Auritro Dey Kirty — Portfolio
+# Auritro Dey Kirty | Portfolio
 
 Frontend Developer portfolio showcasing interactive web projects, animations and API-driven applications.
 
-## 🚀 Live Site
+## Live Site
 https://auritrodeykirty07.github.io/Portfolio/
 
-## 🧩 Featured Projects
+## Featured Projects
+- CodeForge
 - Pokemon KO Battle
 - Weather Dashboard
 - Mini JS Games
 
-## 🛠 Tech Stack
+## Tech Stack
 HTML  
 CSS  
 JavaScript  
-GitHub Pages
