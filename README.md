@@ -43,10 +43,10 @@ The CSS alone spans three files (`styles.css`, `upgrades.css`, `project-styles.c
 
 ## Screenshots
 
-
+<span style="justify-content: center">
 <img src="images/Portfolio-preview1.PNG" width="700" alt="Portfolio preview1" />
 <img src="images/Portfolio-preview2.PNG" width="700" alt="Portfolio preview1" />
-
+</span>
 
 ---
 
