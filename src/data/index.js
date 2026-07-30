@@ -1,3 +1,9 @@
+import image1 from '../../assets/popup.PNG'
+import image2 from '../../assets/hero.PNG'
+import image3 from '../../assets/porsche-ss1.PNG'
+import image4 from '../../assets/crav-burger-ss2.PNG'
+import blogImg from '../../assets/live-web-tracker-blog.PNG'
+
 export const PORTFOLIO_DATA = {
   hero: {
     name: "Auritro Dey Kirty",
@@ -79,7 +85,7 @@ export const PORTFOLIO_DATA = {
       id: 1,
       title: "Live Web Tracker Platform",
       description: "A real-time, room-based location-sharing web application supporting concurrent users across private, isolated sessions with live distance tracking, speed monitoring, and an SOS emergency alert feature. Implemented secure Google OAuth authentication and managed persistent user sessions via Firebase Auth. Designed real-time synchronization using Firebase Firestore listeners.",
-      image: "../../assets/popup.PNG",
+      image: image1,
       tags: ["JavaScript", "Firebase Auth", "Firestore", "Leaflet.js", "Geolocation API"],
       github: "https://github.com/AuritroDeyKirty07/live-web-tracker-app",
       live: "https://live-web-tracker-app.vercel.app",
@@ -89,7 +95,7 @@ export const PORTFOLIO_DATA = {
       id: 2,
       title: "Pokémon Battle Simulator",
       description: "An interactive, turn-based battle simulator with dynamic HP tracking, type-matchup logic, and real-time attack resolution. Integrated the RESTful PokeAPI via Fetch API to retrieve live Pokémon statistics and sprite assets. Leveraged Google's Gemini API to generate AI-powered Pokémon stat comparisons and battle insights.",
-      image: "../../assets/hero.PNG",
+      image: image2,
       tags: ["JavaScript", "PokeAPI", "Gemini API", "CSS3"],
       github: "https://github.com/AuritroDeyKirty07/pokemon-battle-simulator",
       live: "https://auritrodeykirty07.github.io/pokemon-battle-simulator/",
@@ -99,7 +105,7 @@ export const PORTFOLIO_DATA = {
       id: 3,
       title: "Porsche Landing Page",
       description: "A fully responsive landing page with mobile-first design and smooth CSS animations. Implemented immersive micro-animations, video integrations, and modern UI/UX principles to deliver a premium user experience without relying on external CSS frameworks.",
-      image: "../../assets/porsche-ss1.PNG",
+      image: image3,
       tags: ["HTML5", "CSS3", "Vanilla JS"],
       github: "https://github.com/AuritroDeyKirty07/porsche-website-frontend",
       live: "https://porsche-website-frontend.vercel.app/",
@@ -109,7 +115,7 @@ export const PORTFOLIO_DATA = {
       id: 4,
       title: "Crav Burger UI",
       description: "A visually appealing burger restaurant frontend interface demonstrating modern styling and layout capabilities with custom CSS animations and responsive design.",
-      image: "../../assets/crav-burger-ss2.PNG",
+      image: image4,
       tags: ["HTML5", "CSS3", "Vanilla JS"],
       github: "https://github.com/AuritroDeyKirty07/crav-burger-frontend",
       live: "https://auritrodeykirty07.github.io/crav-burger-frontend/",
@@ -140,7 +146,7 @@ export const PORTFOLIO_DATA = {
       date: "July 19, 2026",
       readTime: "6 min read",
       tags: ["React", "Performance", "Web Dev"],
-      image: "../../assets/live-web-tracker-blog.PNG",
+      image: blogImg,
       link: "https://medium.com/@deykirtyauritro/how-i-built-a-room-based-live-location-tracker-with-google-authentication-real-time-9145631c5002"
     }
   ]

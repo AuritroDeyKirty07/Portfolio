@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { cn } from '@/utils';
 import { PATH } from '@/utils/app-routes';
 
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,7 @@ export function Navbar() {
             </NavLink>
           ))}
           <Button asChild variant="default" size="sm">
-            <a href="../assets/Auritro_Dey_Kirty_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+            <a href={`${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf`} target="_blank" rel="noreferrer">Resume</a>
           </Button>
         </div>
 
