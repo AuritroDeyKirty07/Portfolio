@@ -3,6 +3,7 @@ import image2 from '../../assets/hero.PNG'
 import image3 from '../../assets/porsche-ss1.PNG'
 import image4 from '../../assets/crav-burger-ss2.PNG'
 import blogImg from '../../assets/live-web-tracker-blog.PNG'
+import blogImg2 from '../../assets/NUB.png'
 
 export const PORTFOLIO_DATA = {
   hero: {
@@ -148,6 +149,16 @@ export const PORTFOLIO_DATA = {
       tags: ["React", "Performance", "Web Dev"],
       image: blogImg,
       link: "https://medium.com/@deykirtyauritro/how-i-built-a-room-based-live-location-tracker-with-google-authentication-real-time-9145631c5002"
+    },
+    {
+      id: 2,
+      title: "I tried NUB: The new Node.js toolkit that wants to replace npm, npx, tsx, pnpm, and nvm",
+      summary: "Exploring NUB, an all-in-one Node.js toolkit designed to streamline development by replacing multiple package managers and execution tools.",
+      date: "August 3, 2026",
+      readTime: "4 min read",
+      tags: ["Node.js", "Tools", "Web Dev"],
+      image: blogImg2,
+      link: "http://medium.com/@deykirtyauritro/i-tried-nub-the-new-node-js-toolkit-that-wants-to-replace-npm-npx-tsx-pnpm-and-nvm-0a93dbd90ffb?postPublishedType=initial"
     }
   ]
 };

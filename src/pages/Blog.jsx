@@ -23,11 +23,11 @@ export function Blog() {
         subtitle="My thoughts on software engineering and technology"
       />
 
-      <div className="grid w-110 mx-auto">
+      <div className="flex flex-wrap justify-center gap-8">
         {blog.map((post) => (
           <Card
             key={post.id}
-            className="overflow-hidden flex flex-col bg-card border-border hover:shadow-lg hover:border-primary/50 transition-all duration-300 group"
+            className="w-full max-w-md overflow-hidden flex flex-col bg-card border-border hover:shadow-lg hover:border-primary/50 transition-all duration-300 group"
           >
             <div className="relative overflow-hidden aspect-video bg-muted">
               <img
