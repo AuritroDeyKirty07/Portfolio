@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0d1933"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+    <linearGradient id="accent-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Network Nodes & Topology -->
+  <g opacity="0.6">
+    <line x1="400" y1="180" x2="240" y2="120" stroke="#00d2ff" stroke-width="2" stroke-dasharray="4,4"/>
+    <line x1="400" y1="180" x2="560" y2="120" stroke="#00d2ff" stroke-width="2" stroke-dasharray="4,4"/>
+    <line x1="400" y1="180" x2="200" y2="260" stroke="#3a7bd5" stroke-width="2"/>
+    <line x1="400" y1="180" x2="600" y2="260" stroke="#3a7bd5" stroke-width="2"/>
+    <line x1="400" y1="180" x2="320" y2="330" stroke="#a855f7" stroke-width="2"/>
+    <line x1="400" y1="180" x2="480" y2="330" stroke="#a855f7" stroke-width="2"/>
+    
+    <!-- Worker nodes -->
+    <circle cx="240" cy="120" r="14" fill="#1e293b" stroke="#00d2ff" stroke-width="3"/>
+    <circle cx="560" cy="120" r="14" fill="#1e293b" stroke="#00d2ff" stroke-width="3"/>
+    <circle cx="200" cy="260" r="14" fill="#1e293b" stroke="#3a7bd5" stroke-width="3"/>
+    <circle cx="600" cy="260" r="14" fill="#1e293b" stroke="#3a7bd5" stroke-width="3"/>
+    <circle cx="320" cy="330" r="14" fill="#1e293b" stroke="#a855f7" stroke-width="3"/>
+    <circle cx="480" cy="330" r="14" fill="#1e293b" stroke="#a855f7" stroke-width="3"/>
+  </g>
+
+  <!-- Coordinator Center Node -->
+  <circle cx="400" cy="180" r="42" fill="#0f172a" stroke="url(#cyan-glow)" stroke-width="4"/>
+  <circle cx="400" cy="180" r="26" fill="url(#accent-glow)" opacity="0.3"/>
+  
+  <!-- AI / Core icon representation -->
+  <path d="M390 170 L410 170 L410 190 L390 190 Z" fill="none" stroke="#00d2ff" stroke-width="3"/>
+  <circle cx="400" cy="180" r="4" fill="#ffffff"/>
+
+  <!-- Badge / Hackathon tag -->
+  <rect x="280" y="38" width="240" height="30" rx="15" fill="#1e293b" stroke="#00d2ff" stroke-width="1.5" opacity="0.9"/>
+  <text x="400" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#00d2ff" text-anchor="middle">
+    hackCBS 9.0 • TOP 10 FINALIST
+  </text>
+
+  <!-- Title & Subtitle -->
+  <text x="400" y="385" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">
+    MeshCompute AI
+  </text>
+  <text x="400" y="415" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#94a3b8" text-anchor="middle">
+    Distributed Computing Platform • Gemini AI • Worker Threads • Socket.IO
+  </text>
+</svg>

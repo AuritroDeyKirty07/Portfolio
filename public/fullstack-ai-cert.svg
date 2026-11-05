@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <linearGradient id="cert-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f3e5ab"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+    <linearGradient id="cert-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#cert-bg)"/>
+
+  <!-- Ornate Border -->
+  <rect x="30" y="30" width="940" height="640" rx="12" fill="none" stroke="url(#cert-border)" stroke-width="6"/>
+  <rect x="45" y="45" width="910" height="610" rx="8" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Organization / Header -->
+  <text x="500" y="130" font-family="'Times New Roman', serif" font-size="28" font-weight="700" fill="#d4af37" text-anchor="middle" letter-spacing="4">
+    BRAIN MENTORS, NEW DELHI
+  </text>
+  <text x="500" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="2">
+    CENTER FOR ADVANCED LEARNING &amp; SOFTWARE ARCHITECTURE
+  </text>
+
+  <line x1="350" y1="185" x2="650" y2="185" stroke="#d4af37" stroke-width="1.5"/>
+
+  <!-- Certificate Heading -->
+  <text x="500" y="240" font-family="'Times New Roman', serif" font-size="38" font-style="italic" fill="#f8fafc" text-anchor="middle">
+    Certificate of Completion
+  </text>
+  
+  <text x="500" y="285" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    This is proudly presented to
+  </text>
+
+  <!-- Student Name -->
+  <text x="500" y="350" font-family="'Times New Roman', serif" font-size="46" font-weight="700" fill="#38bdf8" text-anchor="middle">
+    Auritro Dey Kirty
+  </text>
+
+  <line x1="250" y1="375" x2="750" y2="375" stroke="#334155" stroke-width="1"/>
+
+  <!-- Description -->
+  <text x="500" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#e2e8f0" text-anchor="middle">
+    for successfully completing the comprehensive 45-day intensive professional program in
+  </text>
+  <text x="500" y="455" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#d4af37" text-anchor="middle">
+    Full Stack Development with AI
+  </text>
+
+  <text x="500" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Covering Modern Web Stacks, Generative AI Integration, REST Architectures &amp; Distributed Systems
+  </text>
+
+  <!-- Footer Info -->
+  <g transform="translate(180, 580)">
+    <line x1="0" y1="0" x2="180" y2="0" stroke="#64748b" stroke-width="1"/>
+    <text x="90" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">July 2026</text>
+    <text x="90" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Date of Issuance</text>
+  </g>
+
+  <!-- Seal / Badge -->
+  <g transform="translate(500, 580)">
+    <circle cx="0" cy="0" r="35" fill="#1e293b" stroke="url(#cert-border)" stroke-width="3"/>
+    <polygon points="0,-18 5,-5 18,-5 8,4 12,17 0,9 -12,17 -8,4 -18,-5 -5,-5" fill="#d4af37"/>
+  </g>
+
+  <g transform="translate(640, 580)">
+    <line x1="0" y1="0" x2="180" y2="0" stroke="#64748b" stroke-width="1"/>
+    <text x="90" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">Brain Mentors</text>
+    <text x="90" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Authorized Signatory</text>
+  </g>
+</svg>

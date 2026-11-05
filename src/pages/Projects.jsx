@@ -38,19 +38,29 @@ export function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {filteredProjects.map((project) => (
           <Card key={project.id} className="overflow-hidden flex flex-col bg-card border-border hover:shadow-lg hover:border-primary/50 transition-all duration-300 group">
-            <div className="relative overflow-hidden aspect-video bg-muted">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-300" />
+            <div className="relative overflow-hidden aspect-video bg-muted/60">
+              {project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  onError={(e) => {
+                    // Fallback if image path fails
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-secondary/40 text-muted-foreground font-medium">
+                  {project.title}
+                </div>
+              )}
+              <div className="absolute inset-0 bg-background/10 group-hover:bg-transparent transition-colors duration-300" />
             </div>
             
             <CardHeader>
               <div className="flex justify-between items-start gap-4">
-                <CardTitle className="text-2xl">{project.title}</CardTitle>
+                <CardTitle className="text-2xl leading-tight">{project.title}</CardTitle>
               </div>
             </CardHeader>
             
@@ -68,16 +78,26 @@ export function Projects() {
             </CardContent>
             
             <CardFooter className="pt-4 border-t border-border/50 gap-4">
-              <Button asChild variant="default" className="flex-1">
-                <a href={project.live} target="_blank" rel="noreferrer">
-                  <ExternalLink size={16} className="mr-2" /> Live Demo
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="flex-1">
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  <FaGithub size={16} className="mr-2" /> GitHub
-                </a>
-              </Button>
+              {project.live ? (
+                <>
+                  <Button asChild variant="default" className="flex-1">
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      <ExternalLink size={16} className="mr-2" /> Live Demo
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="flex-1">
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <FaGithub size={16} className="mr-2" /> GitHub
+                    </a>
+                  </Button>
+                </>
+              ) : (
+                <Button asChild variant="default" className="w-full">
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    <FaGithub size={16} className="mr-2" /> View Repository on GitHub
+                  </a>
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}
