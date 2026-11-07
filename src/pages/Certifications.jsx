@@ -25,7 +25,7 @@ export function Certifications() {
   return (
     <div className="container mx-auto px-6 md:px-12 py-16">
       <SectionHeading title="Certifications" subtitle="Professional achievements and ongoing learning" />
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {certifications.map((cert) => (
           <Card key={cert.id} className="bg-card border-border hover:border-primary/50 transition-all duration-300 group hover:shadow-lg flex flex-col justify-between">
@@ -39,20 +39,20 @@ export function Certifications() {
                   <p className="text-muted-foreground text-sm font-medium">{cert.issuer}</p>
                 </div>
               </div>
-              
+
               <div className="mt-auto pt-4 flex items-center justify-between border-t border-border/50">
                 <span className="text-xs text-muted-foreground font-medium">{cert.date}</span>
                 {cert.isImage || cert.image ? (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={() => setSelectedCert(cert)}
                     className="group/btn text-primary hover:text-primary hover:bg-primary/10 cursor-pointer"
                   >
-                    View <Eye size={14} className="ml-1.5 opacity-70 group-hover/btn:opacity-100 transition-opacity" />
+                    View <ExternalLink size={14} className="ml-1.5 opacity-70 group-hover/btn:opacity-100 transition-opacity" />
                   </Button>
                 ) : (
-                  <Button variant="ghost" size="sm" asChild className="group/btn">
+                  <Button variant="ghost" size="sm" asChild className="group/btn text-primary hover:text-primary hover:bg-primary/10 cursor-pointer">
                     <a href={cert.link} target="_blank" rel="noreferrer">
                       View <ExternalLink size={14} className="ml-1.5 opacity-70 group-hover/btn:opacity-100 transition-opacity" />
                     </a>
@@ -66,11 +66,11 @@ export function Certifications() {
 
       {/* Certificate Image Modal Lightbox */}
       {selectedCert && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md animate-fade-in"
           onClick={() => setSelectedCert(null)}
         >
-          <div 
+          <div
             className="relative max-w-4xl w-full bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
@@ -82,7 +82,7 @@ export function Certifications() {
               </div>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors hover: cursor-pointer"
                 aria-label="Close modal"
               >
                 <X size={20} />
@@ -91,8 +91,8 @@ export function Certifications() {
 
             {/* Modal Image View */}
             <div className="p-4 overflow-auto flex items-center justify-center bg-black/40 min-h-[350px]">
-              <img 
-                src={selectedCert.image} 
+              <img
+                src={selectedCert.image}
                 alt={selectedCert.title}
                 className="max-h-[70vh] w-auto max-w-full rounded-lg shadow-md object-contain"
                 onError={(e) => {

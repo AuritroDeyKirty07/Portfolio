@@ -94,7 +94,7 @@ export function Projects() {
               ) : (
                 <Button asChild variant="default" className="w-full">
                   <a href={project.github} target="_blank" rel="noreferrer">
-                    <FaGithub size={16} className="mr-2" /> View Repository on GitHub
+                    <FaGithub size={16} className="mr-2" /> GitHub
                   </a>
                 </Button>
               )}

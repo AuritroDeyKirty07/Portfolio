@@ -17,19 +17,31 @@ const buttonSizes = {
   icon: "h-10 w-10",
 }
 
-const Button = React.forwardRef(({ className, variant = "default", size = "default", asChild = false, ...props }, ref) => {
-  const Comp = asChild ? "span" : "button"
+const Button = React.forwardRef(({ className, variant = "default", size = "default", asChild = false, children, ...props }, ref) => {
+  const buttonClasses = cn(
+    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+    buttonVariants[variant],
+    buttonSizes[size],
+    className
+  )
+
+  if (asChild && React.isValidElement(children)) {
+    return React.cloneElement(children, {
+      ...props,
+      ...children.props,
+      className: cn(buttonClasses, children.props.className),
+      ref,
+    })
+  }
+
   return (
-    <Comp
-      className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-        buttonVariants[variant],
-        buttonSizes[size],
-        className
-      )}
+    <button
+      className={buttonClasses}
       ref={ref}
       {...props}
-    />
+    >
+      {children}
+    </button>
   )
 })
 Button.displayName = "Button"

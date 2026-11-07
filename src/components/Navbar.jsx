@@ -51,7 +51,7 @@ export function Navbar() {
             </NavLink>
           ))}
           <Button asChild variant="default" size="sm">
-            <a href={`${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf`} target="_blank" rel="noreferrer">Resume</a>
+            <a href={`${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf?v=20261107`} target="_blank" rel="noreferrer">Resume</a>
           </Button>
         </div>
 
@@ -89,7 +89,7 @@ export function Navbar() {
             </NavLink>
           ))}
           <Button asChild variant="default" size="sm" className="w-full mt-2">
-            <a href={`${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf`} target="_blank" rel="noreferrer" onClick={closeMenu}>Resume</a>
+            <a href={`${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf?v=20261107`} target="_blank" rel="noreferrer" onClick={closeMenu}>Resume</a>
           </Button>
         </div>
       </div>

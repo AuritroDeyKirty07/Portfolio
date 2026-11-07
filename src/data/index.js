@@ -2,8 +2,8 @@ import image1 from '../../assets/popup.PNG';
 import image2 from '../../assets/hero.PNG';
 import image3 from '../../assets/porsche-ss1.PNG';
 import image4 from '../../assets/crav-burger-ss2.PNG';
-import meshComputeImg from '../../assets/meshcompute-ai.svg';
-import dominosImg from '../../assets/dominos-food-app.svg';
+import meshComputeImg from '../../assets/meshcompute-ai.PNG';
+import dominosImg from '../../assets/dominos-food-app.PNG';
 import certAiImg from '../../assets/fullstack-ai-cert.svg';
 import blogImg from '../../assets/live-web-tracker-blog.PNG';
 import blogImg2 from '../../assets/NUB.png';
@@ -13,7 +13,7 @@ export const PORTFOLIO_DATA = {
     name: "Auritro Dey Kirty",
     role: "Computer Science Undergraduate & Full-Stack Developer",
     description: "Passionate about scalable distributed backend systems, modern full-stack web applications, and solving complex algorithmic challenges.",
-    resumeLink: `${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf`,
+    resumeLink: `${import.meta.env.BASE_URL}Auritro_Dey_Kirty_Resume.pdf?v=20261107`,
     socials: {
       github: "https://github.com/AuritroDeyKirty07",
       linkedin: "https://www.linkedin.com/in/auritro-dey-kirty",
@@ -28,7 +28,7 @@ export const PORTFOLIO_DATA = {
     education: [
       {
         id: 1,
-        institution: "Guru Gobind Singh Indraprastha University",
+        institution: "Bhagwan Parshuram Institute of Technology, GGSIPU",
         location: "Delhi, India",
         degree: "B.Tech in Computer Science & Engineering",
         duration: "July 2024 – Present",
@@ -67,8 +67,7 @@ export const PORTFOLIO_DATA = {
       { name: "Express.js", level: 85 },
       { name: "REST APIs", level: 90 },
       { name: "JWT Authentication", level: 90 },
-      { name: "Role-Based Access Control (RBAC)", level: 85 },
-      { name: "Socket.IO", level: 80 }
+      { name: "Socket.IO", level: 50 }
     ],
     "Databases": [
       { name: "MongoDB", level: 85 },
@@ -90,8 +89,8 @@ export const PORTFOLIO_DATA = {
       { name: "Data Structures & Algorithms", level: 90 },
       { name: "Object-Oriented Programming (OOP)", level: 90 },
       { name: "MVC Pattern", level: 85 },
-      { name: "Database Management Systems (DBMS)", level: 85 },
-      { name: "Operating Systems", level: 80 },
+      { name: "Database Management Systems (DBMS)", level: 90 },
+      { name: "Operating Systems", level: 90 },
       { name: "Computer Networks", level: 80 }
     ]
   },
